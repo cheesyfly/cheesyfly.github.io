@@ -1,0 +1,109 @@
+.container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;  /* Horizontally centers the content */
+  align-items: center;      /* Vertically centers the content */
+  height: 100vh;            /* Make the container take up the full height of the viewport */
+  margin: auto;
+
+  .content {
+    text-align: center;       /* Center text or any other content inside */
+
+    img.floating-logo {
+      max-width: 60%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      transform: translate(-5%, 0px);
+      animation: floatUpDown 3s ease-in-out infinite;  /* Apply the floating animation */
+    }
+
+    .button-container {
+      padding: 12px;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 100px;
+      width: 100px; 
+      height: 100px; 
+      background-color: white; 
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .c, .f {
+      position: absolute;  /* Allow positioning of images inside the container */
+      width: 100px;         /* Make both images fill the container */
+      height: 100px;        /* Ensure both images cover the container height */
+    }
+
+    .c {
+      animation: moveImages 6s ease-in-out infinite;  
+    }
+
+    .f {
+      animation: reverseMoveImages 6s ease-in-out infinite;
+    }
+
+    /* Animation for moving images */
+    @keyframes moveImages {
+      0%, 100% {
+        transform: translateX(-50%); /* Images start at their original position */
+      }
+      50% {
+        transform: translateX(200px); /* Move images to the right */
+      }
+    }
+
+    /* Animation for moving images */
+    @keyframes reverseMoveImages {
+      0%, 100% {
+        transform: translateX(-200px); /* Move images to the right */
+      }
+      50% {
+        transform: translateX(-50%); /* Images start at their original position */
+      }
+    }
+
+    /* Define the keyframes for the floating effect */
+    @keyframes floatUpDown {
+      0% {
+        transform: translateY(0); /* Start at the original position */
+      }
+      50% {
+        transform: translateY(-20px); /* Move up by 20px */
+      }
+      100% {
+        transform: translateY(0); /* Return to the original position */
+      }
+    }
+
+
+    .in-construction {
+      font-size: 35px;
+      font-family: 'Jockey One';
+      padding-top: 25px;
+    }
+
+    /* Medium screens (tablets) */
+    @media (max-width: 1024px) {
+      .in-construction {
+        font-size: 30px;  /* Slightly smaller text for tablets */
+      }
+    }
+
+    /* Small screens (mobile) */
+    @media (max-width: 768px) {
+      .in-construction {
+        font-size: 25px;  /* Smaller text for mobile devices */
+      }
+    }
+
+    /* Extra small screens (very small mobile devices) */
+    @media (max-width: 480px) {
+      .in-construction {
+        font-size: 22px;  /* Tiny text for very small mobile devices */
+      }
+    }
+
+  }
+}

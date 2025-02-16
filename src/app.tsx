@@ -1,43 +1,32 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import './app.scss'
 
 export function App() {
-  const [count, setCount] = useState(0)
+  const handleClickButton = () => {
+    const id = Math.ceil(Math.random() * 1000) % 4;
+    const sound = document.getElementById(`sound-${id}`) as HTMLAudioElement
+
+    sound.play();
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
+    <div className="container">
+      <div className="content">
+        <img className="floating-logo" src="/cheesyfly.github.io/assets/images/cf_logo.png"/>
+        <div className="in-construction">
+          En construcción, regrese pronto....
+        </div>
+
+        <div className="button-container" onClick={handleClickButton}>
+          <img class="c" src="/cheesyfly.github.io/assets/images/c.png" />
+          <img class="f" src="/cheesyfly.github.io/assets/images/f.png" />
+        </div>
+
+        <audio id="sound-0" src="/cheesyfly.github.io/assets/sounds/0.mp3" preload="auto"></audio>
+        <audio id="sound-1" src="/cheesyfly.github.io/assets/sounds/1.mp3" preload="auto"></audio>
+        <audio id="sound-2" src="/cheesyfly.github.io/assets/sounds/2.mp3" preload="auto"></audio>
+        <audio id="sound-3" src="/cheesyfly.github.io/assets/sounds/3.mp3" preload="auto"></audio>
+
       </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p>
-        Check out{' '}
-        <a
-          href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-          target="_blank"
-        >
-          create-preact
-        </a>
-        , the official Preact + Vite starter
-      </p>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
-    </>
+    </div>
   )
 }

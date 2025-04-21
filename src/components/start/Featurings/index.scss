@@ -1,0 +1,43 @@
+#featurings {
+    h2, h3, p {
+        font-family: "Bebas Neue", sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+    
+    h3 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .feat {
+        margin: auto;
+        text-decoration: none;
+        margin-bottom: 100px;
+        display: block;
+        
+        img {
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+
+        p {
+            font-family: "Judson", serif;
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .feat {
+            img {
+                width: 90%;
+            }
+        }
+    }
+
+}

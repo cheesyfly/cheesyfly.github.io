@@ -1,0 +1,69 @@
+#project-villamesta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+        max-width: 100%;
+    }
+
+    .characters {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+
+        span {
+            display: inline-block;
+            color: white;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+
+        .char1 {
+            width: 12%;
+        }
+
+        .char2 {
+            width: 20%;
+        }
+
+        .char3 {
+            width: 37%;
+        }
+    }
+
+    p.description {
+        color: white;
+        font-size: 25px;
+        padding: 30px 30px 0px 30px;
+        margin: 0;
+        &.centered {
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .characters {
+            .char1 {
+                width: 16%;
+            }
+
+            .char2 {
+                width: 27%;
+            }
+
+            .char3 {
+                width: 46%;
+            }
+
+            span {
+                font-size: 19px;
+            }
+        }
+
+        p.description {
+            font-size: 18px;
+        }
+    }
+}

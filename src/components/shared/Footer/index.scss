@@ -1,0 +1,16 @@
+footer {
+    background-color: black;
+    padding: 30px;
+    
+    .logos {
+        a {
+            color: white;
+        }
+
+        font-size: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        max-width: 500px;
+    }
+}

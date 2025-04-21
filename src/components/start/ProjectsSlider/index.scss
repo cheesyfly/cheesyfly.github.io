@@ -1,0 +1,16 @@
+#project-slider-page {
+    h3 {
+        color: white;
+    }
+
+    .slick-arrow {
+        display: none !important;
+    }
+
+    .slick-dots {
+        button:before {
+            color: white;
+            font-size: 20px;
+        }
+    }
+}

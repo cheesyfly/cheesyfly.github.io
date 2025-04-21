@@ -1,0 +1,69 @@
+#music-list {
+    display: flex;
+
+    .list-thumbs {
+        flex: 1;
+        
+        .list-title {
+            color: white;
+            text-transform: uppercase;
+            font-family: "Bebas Neue", sans-serif;
+            text-align: left;
+            margin-top: 50px;
+            font-size: 30px;
+        }
+    
+        .list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            
+            .list-item {
+                display: inline-block;
+                padding: 10px;
+                width: calc(30% - 10px);
+                height: calc(30% - 10px);
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        
+        .list-thumbs {
+            .list-title {
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .list {
+                display: block;
+                justify-content: unset;
+                
+                .list-item {
+                    display: inline-block;
+                    padding: 10px;
+                    width: calc(30% - 10px);
+                    height: calc(30% - 10px);
+        
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &:last-child > .list {
+                justify-content: flex-end;
+            }
+        }
+
+    }
+}

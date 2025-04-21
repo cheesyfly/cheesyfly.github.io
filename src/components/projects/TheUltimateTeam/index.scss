@@ -1,0 +1,26 @@
+#project-ultimate {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+
+    img {
+        max-width: 100%;
+    }
+
+    p.description {
+        color: white;
+        font-size: 25px;
+        padding: 30px 30px 0px 30px;
+        margin: 0;
+        &.centered {
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        p.description {
+            font-size: 18px;
+        }
+    }
+}

@@ -2,6 +2,7 @@
 import '../main.scss';
 import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
+import InitialAnimation from "../components/shared/InitialAnimation"
 const { title } = Astro.props;
 ---
 <!doctype html>
@@ -10,6 +11,8 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preload" as="image" href="/assets/images/splash-screen.png" />
+		<slot name="head" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +25,7 @@ const { title } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
+		<InitialAnimation client:only />
 	</body>
 </html>
 

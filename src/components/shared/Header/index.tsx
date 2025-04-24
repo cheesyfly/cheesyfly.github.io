@@ -38,8 +38,6 @@ export default function Header() {
         </div>
 
         <div className="header-background-mobile">
-            <HeaderItem item={{ type: 'img', src: '/assets/images/cf_logo.png', redirectTo: '/' }} />
-
             <div className="header-items-container">
                 {headerItems.map((item, idx) => (
                     <HeaderItem item={item} key={idx} />

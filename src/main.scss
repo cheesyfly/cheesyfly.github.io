@@ -1,8 +1,15 @@
 html, body {
     background-color: #2C2C2C;
 }
+
+body {
+  display: flex;  
+  flex-direction: column;
+  width: auto;
+}
+
 main {
-  max-width: 1024px;
+  max-width: 1400px;
   margin: auto;
-  margin-bottom: 20px;
+  width: 100%;
 }

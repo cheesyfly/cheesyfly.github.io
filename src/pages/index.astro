@@ -10,7 +10,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Cheesy Fly">
+	<Fragment slot="head">
+		<link rel="preload" as="image" href="/assets/images/anouncements/0.png" />
+		<link rel="preload" as="image" href="/assets/images/anouncements/1.png" />
+		<link rel="preload" as="image" href="/assets/images/anouncements/2.png" />
+	</Fragment>
+
 	<ProjectsSlider client:only="react"/>
 	<MusicList />
-	<Featurings />
+	<Featurings client:only/>
 </Layout>

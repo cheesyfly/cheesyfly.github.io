@@ -5,6 +5,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Cheesy Fly - Projects">
+	<Fragment slot="head">
+		<link rel="preload" as="image" href="/assets/images/projects/villamesta/char1.png" />
+		<link rel="preload" as="image" href="/assets/images/projects/villamesta/char2.png" />
+		<link rel="preload" as="image" href="/assets/images/projects/villamesta/char3.png" />
+		<link rel="preload" as="image" href="/assets/images/projects/villamesta/logo.png" />
+	</Fragment>
+
 	<Villamesta />
 	<TheUltimateTeam />
 </Layout>

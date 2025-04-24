@@ -1,3 +1,4 @@
+import useOnScreen from '../../hooks/useOnScreen';
 import './index.scss'
 
 interface FeaturingItemProps {
@@ -9,13 +10,23 @@ interface FeaturingItemProps {
   idx: number
 }
 
-const FeaturingItem = ({ featuring: { name, redirectTo, description }, idx}: FeaturingItemProps) => {
-  return <a className="feat" href={redirectTo} target='_blank'>
-    <h3>{name}</h3>
-    <img src={`/assets/images/featurings/${idx}.png`} />
-    <p>{description}</p>
-  </a>
-}
+const FeaturingItem = ({ featuring, idx }: FeaturingItemProps) => {
+  const [ref, isVisible] = useOnScreen<HTMLAnchorElement>(0.3);
+
+  return (
+    <a
+      ref={ref}
+      href={featuring.redirectTo}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`feat ${isVisible ? 'visible' : ''}`}
+    >
+      <h3>{featuring.name}</h3>
+      <img src={`/assets/images/featurings/${idx}.png`} />
+      <p>{featuring.description}</p>
+    </a>
+  );
+};
 
 export default function Featurings() {
   const featurings = [
@@ -37,7 +48,7 @@ export default function Featurings() {
       </h2>
 
       {
-        featurings.map((feat, idx) => (<FeaturingItem featuring={feat} idx={idx} />))
+        featurings.map((feat, idx) => (<FeaturingItem featuring={feat} idx={idx} key={idx} />))
       }
     </div>;
   }

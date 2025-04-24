@@ -7,5 +7,10 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Cheesy Fly - Shop">
+	<Fragment slot="head">
+		<link rel="preload" as="image" href="/assets/images/products/camisa.png" />
+		<link rel="preload" as="image" href="/assets/images/products/taza.png" />
+	</Fragment>
+
 	<ShopPage />
 </Layout>

@@ -1,0 +1,24 @@
+#splash-screen {
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    background-color: rgb(50 50 50);
+    display: flex;
+    align-items: anchor-center;
+    transition: opacity 1s;
+    opacity: 1;
+
+    &.blured {
+        opacity: 0;
+    }
+
+    img {
+        max-width: 1024px;
+        margin: auto;
+        width: 100%;
+    }
+
+}

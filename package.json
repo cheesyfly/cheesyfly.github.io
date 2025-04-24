@@ -8,7 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "predeploy": "npm run build && echo > dist/.nojekyll",
-    "deploy": "gh-pages -d dist --cname CNAME -f"
+    "deploy": "gh-pages -d dist --cname cheesyfly.com -f"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",

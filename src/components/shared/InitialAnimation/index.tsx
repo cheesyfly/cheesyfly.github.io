@@ -3,9 +3,22 @@ import './index.scss';
 
 export default function InitialAnimation() {
     const [removeMe, setRemoveMe] = useState(!!sessionStorage.getItem("has-seen-animation"));
+
+    const showTheSite = () => {
+       const header = document.getElementById('header')
+       const main = document.querySelector('main')
+       const footer = document.querySelector('footer')
+
+       for (const el of [header, main, footer]) {
+        el!.style.opacity = "1";
+       }
+    }
     
     useEffect(() => {
-        if (sessionStorage.getItem("has-seen-animation")) return
+        if (sessionStorage.getItem("has-seen-animation")) {
+            showTheSite()
+            return
+        }
         
         document.body.style.overflow = "hidden";
         
@@ -14,11 +27,15 @@ export default function InitialAnimation() {
             sessionStorage.setItem("has-seen-animation", "true")
 
             img?.classList.add("blured");
-            setTimeout(() => { 
-                setRemoveMe(true)
-                document.body.style.overflow = "auto";
-            }, 1000);
-        }, 1000);
+            showTheSite()
+            document.body.style.overflow = "auto";
+
+            const splash = document.querySelector('#splash-screen');
+
+            splash!.addEventListener('transitionend', () => {
+                setRemoveMe(true);
+            });
+        }, 700);
 
         return () => {
             document.body.style.overflow = "auto";

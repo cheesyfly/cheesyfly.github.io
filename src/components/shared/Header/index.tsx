@@ -28,7 +28,7 @@ export default function Header() {
         { type: 'text', text: 'tienda', redirectTo: '/shop' },
         { type: 'text', text: 'proyectos', redirectTo: '/projects' }
     ]
-    return <div id="header">
+    return <div id="header" style={{ opacity: 0 }}>
         <div className="header-background">
             <HeaderItem item={{ type: 'img', src: '/assets/images/cf_logo.png', redirectTo: '/' }} />
 

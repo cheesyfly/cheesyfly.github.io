@@ -8,9 +8,9 @@ export default function ShopPage() {
         <img src="/assets/images/products/taza.png" alt="Taza" />
     </div>
 
-    <div className="go-to-shop">
-        PROXIMAMENTE
-    </div>
+    <a className="go-to-shop" href="https://www.etsy.com/shop/Cheesyflystorehouse?ref=dashboard-header">
+        Llevame ahi!
+    </a>
 
     <div className="shop-description">
         Camisas, Tazas y mas
